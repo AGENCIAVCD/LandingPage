@@ -10,9 +10,18 @@ type ExitIntentModalProps = {
 };
 
 const SESSION_KEY = "vcd-exit-intent-opened";
+const DISMISS_KEY = "vcd-exit-intent-dismissed";
 
 export function ExitIntentModal({ whatsappLink }: ExitIntentModalProps) {
   const [open, setOpen] = useState(false);
+
+  const closeModal = () => {
+    if (typeof window !== "undefined") {
+      window.sessionStorage.setItem(DISMISS_KEY, "true");
+    }
+
+    setOpen(false);
+  };
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -20,8 +29,9 @@ export function ExitIntentModal({ whatsappLink }: ExitIntentModalProps) {
     }
 
     const alreadyShown = window.sessionStorage.getItem(SESSION_KEY);
+    const dismissed = window.sessionStorage.getItem(DISMISS_KEY);
 
-    if (alreadyShown) {
+    if (alreadyShown || dismissed) {
       return;
     }
 
@@ -49,6 +59,7 @@ export function ExitIntentModal({ whatsappLink }: ExitIntentModalProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          onClick={closeModal}
         >
           <motion.div
             className="relative w-full max-w-2xl overflow-hidden rounded-[2rem] border border-white/12 bg-[#1c1411] text-white shadow-[0_40px_100px_rgba(0,0,0,0.45)]"
@@ -56,12 +67,13 @@ export function ExitIntentModal({ whatsappLink }: ExitIntentModalProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.98 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            onClick={(event) => event.stopPropagation()}
           >
             <button
               type="button"
               aria-label="Fechar popup"
-              onClick={() => setOpen(false)}
-              className="absolute right-5 top-5 inline-flex size-10 items-center justify-center rounded-full border border-white/12 bg-white/8 text-white/75 hover:bg-white/12 hover:text-white"
+              onClick={closeModal}
+              className="absolute right-5 top-5 z-10 inline-flex size-10 items-center justify-center rounded-full border border-white/12 bg-white/8 text-white/75 hover:bg-white/12 hover:text-white"
             >
               <X className="size-4" />
             </button>
@@ -95,7 +107,7 @@ export function ExitIntentModal({ whatsappLink }: ExitIntentModalProps) {
                   variant="ghost"
                   size="lg"
                   className="border-white/15 bg-white/[0.06] text-white hover:bg-white/[0.1]"
-                  onClick={() => setOpen(false)}
+                  onClick={closeModal}
                 >
                   Continuar navegando
                 </Button>
