@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #231f20;
+  --muted: #6d6e70;
+  --brand-primary: #ff7700;
+  --brand-secondary: #ffb500;
+  --brand-soft: #ffd577;
+  --surface: #fff8f1;
+  --surface-strong: #1f1a18;
+  --border-soft: rgba(35, 31, 32, 0.1);
+  --ring: rgba(255, 119, 0, 0.28);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-soft: var(--brand-soft);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-border-soft: var(--border-soft);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-space-grotesk);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), sans-serif;
+  text-rendering: optimizeLegibility;
+  background-image:
+    radial-gradient(circle at top right, rgba(255, 181, 0, 0.2), transparent 22rem),
+    radial-gradient(circle at top left, rgba(255, 119, 0, 0.12), transparent 28rem),
+    linear-gradient(180deg, #fff9f3 0%, #ffffff 32%, #fffaf6 100%);
+}
+
+a,
+button {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    opacity 180ms ease;
+}
+
+::selection {
+  background: rgba(255, 119, 0, 0.18);
+  color: var(--foreground);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.bg-mesh {
+  background-image:
+    linear-gradient(rgba(255, 213, 119, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 213, 119, 0.18) 1px, transparent 1px);
+  background-position: center;
+  background-size: 2.75rem 2.75rem;
+}
+
+.card-border {
+  position: relative;
+}
+
+.card-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 119, 0, 0.3),
+    rgba(255, 181, 0, 0.45),
+    rgba(35, 31, 32, 0.08)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+}
