@@ -104,7 +104,7 @@ export default function Home() {
           href={primaryWhatsAppLink}
           target="_blank"
           rel="noreferrer"
-          className="fixed bottom-5 right-5 z-40 inline-flex items-center gap-2.5 rounded-full border border-white/8 bg-[#25D366] px-4 py-2.5 text-[13px] font-semibold text-white shadow-[0_16px_38px_rgba(37,211,102,0.2)] hover:-translate-y-0.5"
+          className="fixed bottom-5 left-5 z-40 inline-flex items-center gap-2.5 rounded-full border border-white/8 bg-[#25D366] px-4 py-2.5 text-[13px] font-semibold text-white shadow-[0_16px_38px_rgba(37,211,102,0.2)] hover:-translate-y-0.5"
         >
           <MessageCircle className="size-4" />
           Falar no WhatsApp
