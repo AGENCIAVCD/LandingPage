@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, MessageCircle, Play, X } from "lucide-react";
+import { MessageCircle, Play, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type CinemaHeroProps = {
@@ -26,13 +26,13 @@ export function CinemaHero({
       <section
         id="topo"
         aria-labelledby="hero-title"
-        className="relative isolate min-h-[100svh] overflow-hidden"
+        className="relative isolate min-h-[92svh] overflow-hidden"
       >
         <div className="absolute inset-0 bg-[#080706]" />
 
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <iframe
-            className="absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full -translate-x-1/2 -translate-y-1/2 scale-[1.18]"
+            className="absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full -translate-x-1/2 -translate-y-1/2 scale-[1.08]"
             src={backgroundVideoUrl}
             title="Você Digital Propaganda background video"
             allow="autoplay; encrypted-media; picture-in-picture"
@@ -40,12 +40,12 @@ export function CinemaHero({
           />
         </div>
 
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,5,5,0.28)_0%,rgba(8,7,6,0.58)_32%,rgba(8,7,6,0.86)_72%,#080706_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,119,0,0.28),transparent_18%),radial-gradient(circle_at_center,transparent_42%,rgba(8,7,6,0.4)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,5,5,0.44)_0%,rgba(8,7,6,0.54)_26%,rgba(8,7,6,0.72)_56%,#080706_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,119,0,0.18),transparent_16%),radial-gradient(circle_at_center,transparent_48%,rgba(8,7,6,0.28)_100%)]" />
 
         <div className="relative z-10">
-          <div className="section-shell pt-6 sm:pt-8">
-            <header className="rounded-full border border-white/10 bg-white/8 px-5 py-4 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.18)] sm:px-7">
+          <div className="section-shell pt-5 sm:pt-7">
+            <header className="mx-auto max-w-6xl rounded-[2rem] border border-white/8 bg-black/18 px-4 py-3 backdrop-blur-xl shadow-[0_18px_45px_rgba(0,0,0,0.14)] sm:px-6">
               <div className="flex items-center justify-between gap-4">
                 <a href="#topo" aria-label="Você Digital Propaganda">
                   <Image
@@ -53,19 +53,19 @@ export function CinemaHero({
                     alt="Você Digital Propaganda"
                     width={4763}
                     height={3368}
-                    className="h-auto w-40 sm:w-44"
+                    className="h-auto w-32 sm:w-36"
                     priority
                   />
                 </a>
 
-                <nav className="hidden items-center gap-8 text-sm font-medium text-white/64 md:flex">
-                  <a href="#diferenciais" className="hover:text-white">
+                <nav className="hidden items-center gap-7 text-[11px] font-medium tracking-[0.16em] text-white/54 uppercase md:flex">
+                  <a href="#diferenciais" className="hover:text-white/84">
                     Diferenciais
                   </a>
-                  <a href="#servicos" className="hover:text-white">
+                  <a href="#servicos" className="hover:text-white/84">
                     Serviços
                   </a>
-                  <a href="#final" className="hover:text-white">
+                  <a href="#final" className="hover:text-white/84">
                     Contato
                   </a>
                 </nav>
@@ -79,62 +79,61 @@ export function CinemaHero({
             </header>
           </div>
 
-          <div className="section-shell flex min-h-[calc(100svh-6rem)] items-end py-14 sm:py-18">
-            <div className="max-w-5xl">
+          <div className="section-shell flex min-h-[calc(92svh-5rem)] items-end py-12 sm:py-16">
+            <div className="max-w-4xl">
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                className="space-y-8"
+                className="space-y-7"
               >
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/8 px-4 py-2 text-sm font-semibold text-white/82 backdrop-blur">
-                  <span className="h-2.5 w-2.5 rounded-full bg-brand-secondary" />
-                  Performance, posicionamento e venda no mesmo movimento
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/8 bg-white/[0.06] px-3 py-1.5 text-[11px] font-medium tracking-[0.18em] text-white/76 uppercase backdrop-blur">
+                  <span className="h-2 w-2 rounded-full bg-brand-secondary" />
+                  Você Digital Propaganda
                 </div>
 
-                <div className="space-y-5">
+                <div className="space-y-4">
                   <h1
                     id="hero-title"
-                    className="max-w-5xl font-display text-5xl font-semibold leading-[0.92] tracking-[-0.05em] text-white text-balance sm:text-6xl lg:text-7xl xl:text-[5.6rem]"
+                    className="max-w-4xl font-display text-5xl font-semibold leading-[0.94] tracking-[-0.06em] text-white text-balance sm:text-6xl lg:text-[4.8rem] xl:text-[5.2rem]"
                   >
-                    Seu negócio pode parecer maior, vender melhor e dominar o
-                    digital.
+                    Presença que impõe valor. Estratégia que move vendas.
                   </h1>
-                  <p className="max-w-2xl text-lg leading-8 text-white/72 sm:text-xl">
-                    A Você Digital cria presença, desejo e direção para marcas
-                    que querem sair do comum e transformar atenção em vendas.
+                  <p className="max-w-xl text-base leading-7 text-white/66 sm:text-lg">
+                    Criamos experiências digitais elegantes, precisas e
+                    comerciais para marcas que querem parecer maiores e vender
+                    melhor.
                   </p>
                 </div>
 
-                <div className="flex flex-col gap-3 sm:flex-row">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
                   <Button asChild size="lg">
                     <a href={whatsappLink} target="_blank" rel="noreferrer">
                       <MessageCircle className="size-4" />
-                      Quero crescer com a Você Digital
+                      Quero falar com a agência
                     </a>
                   </Button>
                   <Button
                     type="button"
-                    size="lg"
+                    size="md"
                     variant="secondary"
-                    className="border-white/16 bg-white/10 text-white hover:border-white/24 hover:bg-white/14"
+                    className="border-white/12 bg-white/[0.04] text-white/82 hover:border-white/18 hover:bg-white/[0.08]"
                     onClick={() => setOpen(true)}
                   >
                     <Play className="size-4 fill-current" />
-                    Assistir apresentação
-                    <ArrowRight className="size-4" />
+                    Ver filme
                   </Button>
                 </div>
 
-                <div className="grid max-w-4xl gap-4 pt-4 sm:grid-cols-3">
+                <div className="grid max-w-3xl gap-3 pt-2 sm:grid-cols-3">
                   {[
-                    "Mais autoridade para a sua marca",
-                    "Mais leads certos chegando no WhatsApp",
-                    "Mais percepção de valor na primeira impressão",
+                    "Marca mais desejada",
+                    "Leads mais qualificados",
+                    "Conversão mais elegante",
                   ].map((item) => (
                     <div
                       key={item}
-                      className="rounded-[1.6rem] border border-white/10 bg-white/[0.08] px-5 py-5 text-sm leading-7 text-white/78 backdrop-blur"
+                      className="rounded-[1.2rem] border border-white/8 bg-white/[0.04] px-4 py-3 text-sm leading-6 text-white/62 backdrop-blur"
                     >
                       {item}
                     </div>

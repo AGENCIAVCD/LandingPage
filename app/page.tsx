@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import {
-  ArrowRight,
   MessageCircle,
-  Sparkles,
-  Star,
   TrendingUp,
+  Sparkles,
 } from "lucide-react";
 import { CinemaHero } from "@/components/cinema-hero";
 import { ExitIntentModal } from "@/components/exit-intent-modal";
@@ -57,28 +55,28 @@ const jsonLd = {
 const benefits = [
   {
     icon: Sparkles,
-    title: "Sua marca fica memorável",
+    title: "Sutil no visual. Forte no impacto.",
     description:
-      "Visual, discurso e direção criativa para sua empresa parecer premium e desejada.",
+      "Design com presença, mas sem excesso. Cada detalhe trabalha a percepção de valor.",
   },
   {
     icon: TrendingUp,
-    title: "Seu tráfego rende mais",
+    title: "Tráfego com destino certo.",
     description:
-      "Cada clique encontra uma experiência pensada para gerar contato e acelerar decisão.",
+      "A atenção não se perde. Ela encontra direção, argumento e ação imediata.",
   },
   {
     icon: MessageCircle,
-    title: "Seu WhatsApp recebe intenção real",
+    title: "Contato mais qualificado.",
     description:
-      "Menos curiosos, mais pessoas prontas para conversar sobre negócio e contratação.",
+      "O clique abre o WhatsApp com contexto, intenção e muito menos fricção comercial.",
   },
 ];
 
 const serviceHighlights = [
-  "Landing pages que fazem o visitante agir.",
-  "Tráfego e estratégia para atrair o público certo.",
-  "Posicionamento visual para elevar percepção de valor.",
+  "Posicionamento para marcas que querem parecer maiores.",
+  "Landing pages para elevar desejo e resposta comercial.",
+  "Estratégia digital com foco em demanda e venda.",
 ];
 
 export const metadata: Metadata = {
@@ -106,7 +104,7 @@ export default function Home() {
           href={primaryWhatsAppLink}
           target="_blank"
           rel="noreferrer"
-          className="fixed bottom-5 right-5 z-40 inline-flex items-center gap-3 rounded-full border border-white/10 bg-[#25D366] px-5 py-3 text-sm font-bold text-white shadow-[0_20px_50px_rgba(37,211,102,0.28)] hover:-translate-y-0.5"
+          className="fixed bottom-5 right-5 z-40 inline-flex items-center gap-2.5 rounded-full border border-white/8 bg-[#25D366] px-4 py-2.5 text-[13px] font-semibold text-white shadow-[0_16px_38px_rgba(37,211,102,0.2)] hover:-translate-y-0.5"
         >
           <MessageCircle className="size-4" />
           Falar no WhatsApp
@@ -115,35 +113,34 @@ export default function Home() {
         <section
           id="diferenciais"
           aria-labelledby="diferenciais-title"
-          className="relative py-20 sm:py-24"
+          className="relative py-18 sm:py-22"
         >
           <div className="section-shell">
             <Reveal>
-              <div className="max-w-3xl">
-                <p className="text-sm font-semibold tracking-[0.18em] text-brand-soft uppercase">
+              <div className="max-w-2xl">
+                <p className="text-[11px] font-medium tracking-[0.18em] text-brand-soft uppercase">
                   Diferenciais
                 </p>
                 <h2
                   id="diferenciais-title"
-                  className="mt-4 font-display text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl"
+                  className="mt-4 font-display text-3xl font-semibold tracking-[-0.05em] text-white sm:text-4xl"
                 >
-                  Menos aparência de agência comum. Mais presença de marca que
-                  vende.
+                  Sofisticação sem exagero. Conversão sem ruído.
                 </h2>
               </div>
             </Reveal>
 
-            <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            <div className="mt-9 grid gap-4 lg:grid-cols-3">
               {benefits.map(({ icon: Icon, title, description }, index) => (
                 <Reveal key={title} delay={0.06 * index}>
-                  <article className="rounded-[1.8rem] border border-white/10 bg-white/[0.04] p-7 backdrop-blur">
-                    <div className="inline-flex rounded-2xl border border-brand-primary/20 bg-brand-primary/10 p-3 text-brand-secondary">
-                      <Icon className="size-6" />
+                  <article className="rounded-[1.4rem] border border-white/8 bg-white/[0.03] p-6 backdrop-blur">
+                    <div className="inline-flex rounded-xl border border-brand-primary/14 bg-brand-primary/[0.07] p-2.5 text-brand-secondary">
+                      <Icon className="size-5" />
                     </div>
-                    <h3 className="mt-6 font-display text-2xl font-semibold tracking-tight text-white">
+                    <h3 className="mt-5 font-display text-xl font-semibold tracking-tight text-white">
                       {title}
                     </h3>
-                    <p className="mt-3 text-base leading-8 text-white/68">
+                    <p className="mt-3 text-[15px] leading-7 text-white/62">
                       {description}
                     </p>
                   </article>
@@ -156,64 +153,58 @@ export default function Home() {
         <section
           id="servicos"
           aria-labelledby="servicos-title"
-          className="py-12 sm:py-18"
+          className="py-10 sm:py-14"
         >
           <div className="section-shell">
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:items-center">
+            <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(300px,0.9fr)] lg:items-start">
               <Reveal>
-                <div className="rounded-[2.2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(255,119,0,0.14),rgba(255,181,0,0.05),rgba(255,255,255,0.03))] p-8 shadow-[0_30px_80px_rgba(0,0,0,0.18)] sm:p-10">
-                  <p className="text-sm font-semibold tracking-[0.18em] text-brand-soft uppercase">
+                <div className="rounded-[1.8rem] border border-white/8 bg-[linear-gradient(145deg,rgba(255,119,0,0.08),rgba(255,181,0,0.03),rgba(255,255,255,0.02))] p-7 shadow-[0_24px_60px_rgba(0,0,0,0.15)] sm:p-8">
+                  <p className="text-[11px] font-medium tracking-[0.18em] text-brand-soft uppercase">
                     O que fazemos
                   </p>
                   <h2
                     id="servicos-title"
-                    className="mt-4 max-w-3xl font-display text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl"
+                    className="mt-4 max-w-3xl font-display text-3xl font-semibold tracking-[-0.05em] text-white sm:text-4xl"
                   >
-                    Ajudamos marcas a chamar atenção, criar desejo e converter
-                    melhor.
+                    Elevamos a imagem da marca e facilitamos a decisão de compra.
                   </h2>
-                  <p className="mt-5 max-w-2xl text-lg leading-8 text-white/68">
-                    Quando a imagem da empresa sobe, a resposta do mercado muda.
-                    Quando a estratégia encaixa, o digital para de ser custo e
-                    vira crescimento.
+                  <p className="mt-5 max-w-2xl text-[15px] leading-7 text-white/62 sm:text-base">
+                    O digital começa na percepção. Quando sua presença é mais
+                    refinada, o mercado responde com mais atenção, mais confiança
+                    e mais intenção.
                   </p>
                 </div>
               </Reveal>
 
               <Reveal delay={0.08}>
-                <div className="rounded-[2rem] border border-[#31261f] bg-[#120f0d] p-8 sm:p-10">
-                  <div className="space-y-4">
+                <div className="rounded-[1.8rem] border border-white/8 bg-[#120f0d] p-7 sm:p-8">
+                  <div className="space-y-3">
                     {serviceHighlights.map((item) => (
                       <div
                         key={item}
-                        className="flex items-start gap-3 rounded-[1.4rem] border border-white/8 bg-white/[0.04] px-4 py-4"
+                        className="rounded-[1.1rem] border border-white/7 bg-white/[0.03] px-4 py-3.5 text-[15px] leading-7 text-white/68"
                       >
-                        <Star className="mt-1 size-4 text-brand-secondary" />
-                        <p className="text-base leading-8 text-white/76">
-                          {item}
-                        </p>
+                        {item}
                       </div>
                     ))}
                   </div>
 
-                  <div className="mt-8 rounded-[1.6rem] border border-brand-primary/16 bg-brand-primary/[0.07] p-6">
-                    <p className="text-sm font-semibold tracking-[0.18em] text-brand-soft uppercase">
+                  <div className="mt-6 rounded-[1.2rem] border border-brand-primary/12 bg-brand-primary/[0.05] p-5">
+                    <p className="text-[11px] font-medium tracking-[0.18em] text-brand-soft uppercase">
                       Atendimento direto
                     </p>
-                    <p className="mt-3 text-base leading-8 text-white/76">
-                      O clique já abre uma mensagem dizendo que você veio da
-                      landing page da Você Digital. É rápido, direto e sem
-                      atrito.
+                    <p className="mt-3 text-[15px] leading-7 text-white/62">
+                      O WhatsApp abre com mensagem pronta dizendo que você veio
+                      desta landing page. Menos atrito, mais contexto.
                     </p>
-                    <div className="mt-5">
-                      <Button asChild size="lg">
+                    <div className="mt-4">
+                      <Button asChild size="md">
                         <a
                           href={primaryWhatsAppLink}
                           target="_blank"
                           rel="noreferrer"
                         >
                           Quero falar agora
-                          <ArrowRight className="size-4" />
                         </a>
                       </Button>
                     </div>
@@ -224,46 +215,45 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="final" aria-labelledby="final-title" className="py-20 sm:py-24">
+        <section id="final" aria-labelledby="final-title" className="py-18 sm:py-22">
           <div className="section-shell">
             <Reveal>
-              <div className="overflow-hidden rounded-[2.4rem] border border-[#3a2a20] bg-[linear-gradient(135deg,#140f0d_0%,#21150f_45%,#130f0d_100%)] shadow-[0_40px_100px_rgba(0,0,0,0.24)]">
-                <div className="relative px-7 py-10 sm:px-10 sm:py-14 lg:px-14">
-                  <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-brand-primary/20 blur-3xl" />
-                  <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
+              <div className="overflow-hidden rounded-[2rem] border border-white/8 bg-[linear-gradient(135deg,#100d0b_0%,#17110d_55%,#0f0c0b_100%)] shadow-[0_30px_80px_rgba(0,0,0,0.2)]">
+                <div className="relative px-7 py-9 sm:px-9 sm:py-11 lg:px-12">
+                  <div className="absolute right-0 top-0 h-44 w-44 rounded-full bg-brand-primary/14 blur-3xl" />
+                  <div className="relative grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
                     <div>
-                      <p className="text-sm font-semibold tracking-[0.18em] text-brand-soft uppercase">
+                      <p className="text-[11px] font-medium tracking-[0.18em] text-brand-soft uppercase">
                         Vamos conversar
                       </p>
                       <h2
                         id="final-title"
-                        className="mt-4 max-w-4xl font-display text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl"
+                        className="mt-4 max-w-4xl font-display text-3xl font-semibold tracking-[-0.05em] text-white sm:text-4xl lg:text-5xl"
                       >
-                        Se o seu negócio quer crescer no digital, o próximo passo
-                        está aqui.
+                        Se a sua marca merece parecer maior, o próximo passo está aqui.
                       </h2>
-                      <p className="mt-5 max-w-2xl text-lg leading-8 text-white/68">
-                        Clique no WhatsApp e comece a conversa com quem entende
-                        posicionamento, percepção de valor e geração de demanda.
+                      <p className="mt-4 max-w-2xl text-[15px] leading-7 text-white/62 sm:text-base">
+                        Fale com a Você Digital no WhatsApp e comece uma conversa
+                        com direção, clareza e ambição de crescimento.
                       </p>
                     </div>
 
-                    <div className="flex flex-col gap-3">
-                      <Button asChild size="lg">
+                    <div className="flex flex-col gap-2.5">
+                      <Button asChild size="md">
                         <a
                           href={primaryWhatsAppLink}
                           target="_blank"
                           rel="noreferrer"
                         >
                           <MessageCircle className="size-4" />
-                          Quero vender mais
+                          Quero falar no WhatsApp
                         </a>
                       </Button>
                       <Button
                         asChild
-                        size="lg"
+                        size="md"
                         variant="secondary"
-                        className="border-white/14 bg-white/8 text-white hover:bg-white/12"
+                        className="border-white/10 bg-white/[0.04] text-white/78 hover:bg-white/[0.08]"
                       >
                         <a href="#topo">Voltar ao topo</a>
                       </Button>
@@ -273,7 +263,7 @@ export default function Home() {
               </div>
             </Reveal>
 
-            <div className="mt-8 flex flex-col items-start justify-between gap-4 border-t border-white/8 pt-6 text-sm text-white/42 sm:flex-row sm:items-center">
+            <div className="mt-7 flex flex-col items-start justify-between gap-4 border-t border-white/8 pt-5 text-sm text-white/38 sm:flex-row sm:items-center">
               <div className="flex items-center gap-3">
                 <Image
                   src="/brand/logo-square.png"

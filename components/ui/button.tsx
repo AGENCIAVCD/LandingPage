@@ -4,21 +4,21 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-          "border-transparent bg-brand-primary text-white shadow-[0_18px_45px_rgba(255,119,0,0.25)] hover:-translate-y-0.5 hover:bg-[#f26e00]",
+          "border-transparent bg-brand-primary text-white shadow-[0_12px_30px_rgba(255,119,0,0.18)] hover:-translate-y-0.5 hover:bg-[#f26e00]",
         secondary:
-          "border-border-soft bg-white text-foreground hover:-translate-y-0.5 hover:border-brand-primary/30 hover:bg-surface",
+          "border-border-soft bg-white/[0.06] text-foreground backdrop-blur hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.1]",
         ghost:
           "border-transparent bg-transparent text-foreground hover:bg-brand-primary/[0.08]",
       },
       size: {
-        sm: "h-10 px-4",
-        md: "h-11 px-5",
-        lg: "h-[3.25rem] px-6 text-base",
+        sm: "h-9 px-4 text-[13px]",
+        md: "h-10 px-5 text-[14px]",
+        lg: "h-11 px-6 text-[15px]",
       },
     },
     defaultVariants: {
