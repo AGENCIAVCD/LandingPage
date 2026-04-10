@@ -97,7 +97,7 @@ export default function Home() {
 
       <main className="bg-background text-foreground">
         <CinemaHero
-          videoSrc="/brand/vcd-showreel.mp4"
+          videoId="TpSnpdC5EKk"
           logoSrc="/brand/logo-primary-negative.png"
           whatsappLink={primaryWhatsAppLink}
         />

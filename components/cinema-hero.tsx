@@ -7,18 +7,19 @@ import { ArrowRight, MessageCircle, Play, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type CinemaHeroProps = {
-  videoSrc: string;
+  videoId: string;
   logoSrc: string;
   whatsappLink: string;
 };
 
 export function CinemaHero({
-  videoSrc,
+  videoId,
   logoSrc,
   whatsappLink,
 }: CinemaHeroProps) {
   const [open, setOpen] = useState(false);
-  const [hasVideo, setHasVideo] = useState(true);
+  const backgroundVideoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&playsinline=1&rel=0&modestbranding=1`;
+  const fullVideoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&rel=0&modestbranding=1`;
 
   return (
     <>
@@ -29,19 +30,15 @@ export function CinemaHero({
       >
         <div className="absolute inset-0 bg-[#080706]" />
 
-        {hasVideo ? (
-          <video
-            className="absolute inset-0 h-full w-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            onError={() => setHasVideo(false)}
-          >
-            <source src={videoSrc} type="video/mp4" />
-          </video>
-        ) : null}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <iframe
+            className="absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full -translate-x-1/2 -translate-y-1/2 scale-[1.18]"
+            src={backgroundVideoUrl}
+            title="Você Digital Propaganda background video"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
+        </div>
 
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,5,5,0.28)_0%,rgba(8,7,6,0.58)_32%,rgba(8,7,6,0.86)_72%,#080706_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,119,0,0.28),transparent_18%),radial-gradient(circle_at_center,transparent_42%,rgba(8,7,6,0.4)_100%)]" />
@@ -175,36 +172,16 @@ export function CinemaHero({
                 <X className="size-4" />
               </button>
 
-              {hasVideo ? (
-                <div className="aspect-video w-full bg-black">
-                  <video
-                    className="h-full w-full object-cover"
-                    controls
-                    autoPlay
-                    playsInline
-                    preload="metadata"
-                    onError={() => setHasVideo(false)}
-                  >
-                    <source src={videoSrc} type="video/mp4" />
-                  </video>
-                </div>
-              ) : (
-                <div className="flex aspect-video items-center justify-center bg-[linear-gradient(135deg,#080706_0%,#1d140f_50%,#080706_100%)] p-10 text-center text-white">
-                  <div className="max-w-2xl space-y-4">
-                    <p className="text-sm font-semibold tracking-[0.18em] text-brand-soft uppercase">
-                      Vídeo indisponível
-                    </p>
-                    <h3 className="font-display text-4xl font-semibold tracking-tight">
-                      O arquivo do vídeo não carregou neste ambiente.
-                    </h3>
-                    <p className="text-base leading-8 text-white/74">
-                      A estrutura do hero e da reprodução completa já está
-                      pronta. Se você quiser, eu também consigo trocar este
-                      arquivo por outro vídeo da marca.
-                    </p>
-                  </div>
-                </div>
-              )}
+              <div className="aspect-video w-full bg-black">
+                <iframe
+                  className="h-full w-full"
+                  src={fullVideoUrl}
+                  title="Você Digital Propaganda video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
             </motion.div>
           </motion.div>
         ) : null}
